@@ -1,0 +1,53 @@
+<odoo>
+	<record model="ir.ui.view" id="academic_degree_base_tree">
+		<field name="name">Academic Degree Base Tree</field>
+		<field name="model">academic.degree</field>
+		<field name="arch" type="xml">
+			<tree string="Academic Degree">
+				<field name="name" />
+				<field name="active" />
+				<field name="write_uid" />
+				<field name="write_date" />
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="academic_degree_base_form">
+		<field name="name">Academic Degree Base Form</field>
+		<field name="model">academic.degree</field>
+		<field name="arch" type="xml">
+			<form string="Academic Degree">
+				<header></header>
+				<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button confirm="Are you Sure?" id="btn_boolean_toggle_active" name="toggle_active" class="oe_stat_button" type="object" icon="fa-check">
+							<field name="active" widget="boolean_button" options="{'terminology':{'string_true':'Active', 'hover_true': 'Archive', 'string_false':'Archived','hover_false': 'Activate'}}" />
+						</button>
+					</div>
+					<h1>
+						<field name="name" />
+					</h1>
+					<group>
+						<field name="description" />
+					</group>
+	
+				</sheet>
+				<div class="oe_chatter">
+				    <field name="message_follower_ids" widget="mail_followers"/>
+				    <field name="activity_ids" widget="mail_activity"/>
+				    <field name="message_ids" widget="mail_thread"/>
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_academic_degree" model="ir.actions.act_window">
+		<field name="name">Jenjang Pendidikan</field>
+		<field name="res_model">academic.degree</field>
+		<field name="view_type">form</field>
+		<field name='view_mode'>tree,form</field>
+	</record>
+
+	<menuitem action="action_academic_degree" id="menu_academic_degree" name="Jenjang Pendidikan" sequence="111"/>
+
+</odoo>
