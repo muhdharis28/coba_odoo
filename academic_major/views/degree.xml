@@ -1,0 +1,12 @@
+<odoo>
+	<record model="ir.ui.view" id="academic_degree_inherit_form">
+		<field name="name">Academic Degree Inherit Form</field>
+		<field name="model">academic.degree</field>
+		<field name= "inherit_id" ref="academic_degree.academic_degree_base_form"/>
+		<field name="arch" type="xml">
+			<field name="description" position="before">
+				<field name ="major_ids"/>
+			</field>
+		</field>
+	</record>
+</odoo>
