@@ -48,6 +48,6 @@
 		<field name='view_mode'>tree,form</field>
 	</record>
 
-	<menuitem action="action_academic_degree" id="menu_academic_degree" name="Jenjang Pendidikan" sequence="111"/>
+	<menuitem action="action_academic_degree" id="menu_academic_degree" name="Jenjang Pendidikan" sequence="111" web_icon="academic_degree,static/src/img/icon.png"/>
 
 </odoo>
